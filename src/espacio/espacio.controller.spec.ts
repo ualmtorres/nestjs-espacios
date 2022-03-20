@@ -4,16 +4,12 @@ import { EspacioService } from './espacio.service';
 
 describe('EspacioController', () => {
   let controller: EspacioController;
-  let mockEspacioService = {};
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [EspacioController],
       providers: [EspacioService],
-    })
-      .overrideProvider(EspacioService)
-      .useValue(mockEspacioService)
-      .compile();
+    }).compile();
 
     controller = module.get<EspacioController>(EspacioController);
   });
