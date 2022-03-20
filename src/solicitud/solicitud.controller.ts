@@ -33,20 +33,20 @@ export class SolicitudController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string): Promise<Solicitud> {
+  findOne(@Param('id') id: number): Promise<Solicitud> {
     return this.solicitudService.findOne(+id);
   }
 
   @Patch(':id')
   update(
-    @Param('id') id: string,
+    @Param('id') id: number,
     @Body() updateSolicitudDto: UpdateSolicitudDto,
   ): Promise<Solicitud> {
     return this.solicitudService.update(+id, updateSolicitudDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string): Promise<any> {
+  remove(@Param('id') id: number): Promise<any> {
     return this.solicitudService.remove(+id);
   }
 }

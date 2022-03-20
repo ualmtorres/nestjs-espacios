@@ -33,20 +33,20 @@ export class EspacioController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string): Promise<Espacio> {
+  findOne(@Param('id') id: number): Promise<Espacio> {
     return this.espacioService.findOne(+id);
   }
 
   @Patch(':id')
   update(
-    @Param('id') id: string,
+    @Param('id') id: number,
     @Body() updateEspacioDto: UpdateEspacioDto,
   ): Promise<Espacio> {
     return this.espacioService.update(+id, updateEspacioDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string): Promise<any> {
+  remove(@Param('id') id: number): Promise<any> {
     return this.espacioService.remove(+id);
   }
 }

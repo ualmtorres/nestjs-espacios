@@ -33,20 +33,20 @@ export class ReservaController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string): Promise<Reserva> {
+  findOne(@Param('id') id: number): Promise<Reserva> {
     return this.reservaService.findOne(+id);
   }
 
   @Patch(':id')
   update(
-    @Param('id') id: string,
+    @Param('id') id: number,
     @Body() updateReservaDto: UpdateReservaDto,
   ): Promise<Reserva> {
     return this.reservaService.update(+id, updateReservaDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string): Promise<any> {
+  remove(@Param('id') id: number): Promise<any> {
     return this.reservaService.remove(+id);
   }
 }
