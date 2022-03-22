@@ -1,4 +1,3 @@
-import { Reserva } from '../../reserva/entities/reserva.entity';
 import { ApiProperty } from '@nestjs/swagger';
 export class CreateEspacioDto {
   @ApiProperty({ example: 'Aulario II' })

@@ -11,15 +11,15 @@ export class EspacioService {
     @InjectRepository(Espacio) private espacioRepository: Repository<Espacio>,
   ) {}
   async create(createEspacioDto: CreateEspacioDto): Promise<Espacio> {
-    return await this.espacioRepository.save(createEspacioDto);
+    return this.espacioRepository.save(createEspacioDto);
   }
 
   async findAll(): Promise<Espacio[]> {
-    return await this.espacioRepository.find();
+    return this.espacioRepository.find();
   }
 
   async findOne(id: number): Promise<Espacio> {
-    return await this.espacioRepository.findOne({ where: { id } });
+    return this.espacioRepository.findOne({ where: { id } });
   }
 
   async update(
@@ -34,6 +34,6 @@ export class EspacioService {
   }
 
   async remove(id: number): Promise<any> {
-    return await this.espacioRepository.delete({ id });
+    return this.espacioRepository.delete({ id });
   }
 }

@@ -12,15 +12,15 @@ export class SolicitudService {
     private solicitudRepository: Repository<Solicitud>,
   ) {}
   async create(createSolicitudDto: CreateSolicitudDto): Promise<Solicitud> {
-    return await this.solicitudRepository.save(createSolicitudDto);
+    return this.solicitudRepository.save(createSolicitudDto);
   }
 
   async findAll(): Promise<Solicitud[]> {
-    return await this.solicitudRepository.find();
+    return this.solicitudRepository.find();
   }
 
   async findOne(id: number): Promise<Solicitud> {
-    return await this.solicitudRepository.findOne(id);
+    return this.solicitudRepository.findOne(id);
   }
 
   async update(
@@ -35,6 +35,6 @@ export class SolicitudService {
   }
 
   async remove(id: number): Promise<any> {
-    return await this.solicitudRepository.delete(id);
+    return this.solicitudRepository.delete(id);
   }
 }

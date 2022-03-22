@@ -15,11 +15,11 @@ export class ReservaService {
   }
 
   async findAll(): Promise<Reserva[]> {
-    return await this.reservaRepository.find();
+    return this.reservaRepository.find();
   }
 
   async findOne(id: number): Promise<Reserva> {
-    return await this.reservaRepository.findOne(id);
+    return this.reservaRepository.findOne(id);
   }
 
   async update(
@@ -34,6 +34,6 @@ export class ReservaService {
   }
 
   async remove(id: number): Promise<any> {
-    return await this.reservaRepository.delete(id);
+    return this.reservaRepository.delete(id);
   }
 }
