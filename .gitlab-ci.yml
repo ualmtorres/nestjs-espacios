@@ -13,7 +13,9 @@ sonarqube-check:
     key: "${CI_JOB_NAME}"
     paths:
       - .sonar/cache
-  script: 
+  script:
+    - npm install
+    - npm test -- --coverage --testResultsProcessor=jest-sonar-reporter
     - sonar-scanner
   allow_failure: true
   only:
