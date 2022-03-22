@@ -88,7 +88,7 @@ describe('SolicitudService', () => {
   });
 
   it('should find a solicitud', async () => {
-    const solicitudId = 2;
+    const solicitudId = 1;
     expect(await (await service.findOne(solicitudId)).id).toEqual(solicitudId);
   });
 
